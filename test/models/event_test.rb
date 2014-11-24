@@ -1,7 +1,9 @@
-require 'test_helper'
+require "test_helper"
 
-class EventTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+describe Event do
+  let(:event) { Event.new }
+
+  it "must be valid" do
+    event.must_be :valid?
+  end
 end

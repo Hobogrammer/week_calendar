@@ -1,4 +1,9 @@
-require 'test_helper'
+require "test_helper"
 
-class EventsHelperTest < ActionView::TestCase
+describe EventsHelper do
+
+  it "must be a real test" do
+    flunk "Need real tests"
+  end
+
 end

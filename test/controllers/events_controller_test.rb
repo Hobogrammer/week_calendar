@@ -1,7 +1,7 @@
-require 'test_helper'
+require "test_helper"
 
-class EventsControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+describe EventsController do
+  it "must be a real test" do
+    flunk "Need real tests"
+  end
 end
