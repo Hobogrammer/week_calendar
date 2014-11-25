@@ -20,4 +20,15 @@ module ApplicationHelper
     end
     nil
   end
+
+  def self.number_to_time_string (time_num)
+    time = ''
+    if time_num < 12
+      (time_num % 1).zero? ? time += "#{time_num}:00am" : time +="#{time_num.to_i}:30am"
+    else
+      binding.pry
+      (time_num % 1).zero? ? time += "#{((time_num - 12))}:00pm" : time += "#{(time_num-12).to_i}:30pm"
+    end
+  end
+
 end
