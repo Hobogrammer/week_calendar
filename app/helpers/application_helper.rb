@@ -24,9 +24,11 @@ module ApplicationHelper
   def number_to_time_string(time_num)
     time = ''
     if time_num < 12
-      (time_num % 1).zero? ? time += "#{time_num}:00am" : time +="#{time_num.to_i}:30am"
+      (time_num % 1).zero? ? time += "#{time_num.to_i}:00am" : time +="#{time_num.to_i}:30am"
+    elsif time_num == 12 || time_num == 12.5
+      (time_num % 1).zero? ? time += "#{time_num.to_i}:00pm" : time += "#{time_num.to_i}:30pm"
     else
-      (time_num % 1).zero? ? time += "#{((time_num - 12))}:00pm" : time += "#{(time_num-12).to_i}:30pm"
+      (time_num % 1).zero? ? time += "#{(time_num - 12).to_i}:00pm" : time += "#{(time_num-12).to_i}:30pm"
     end
   end
 

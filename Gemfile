@@ -29,11 +29,11 @@ gem 'minitest-rails'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+gem 'pry-byebug'
 
 group :development do
   gem 'spring'
   gem 'better_errors'
-  gem 'pry-byebug'
 end
 
 group :test do  

@@ -1,0 +1,9 @@
+<table class="table-striped">
+  <tbody>
+  <% @time_hash.each do |k,v| %>
+    <tr>
+      <td><%= number_to_time_string(k) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

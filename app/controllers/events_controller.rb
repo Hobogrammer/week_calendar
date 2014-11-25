@@ -8,10 +8,11 @@ class EventsController < ApplicationController
     @event = Event.create(event_params)
     @event.day = @event.day.downcase
 
-    if @event.save
+    if Event.collision_check(@event) && @event.save
       redirect_to root_path, success: "Event created successfully"
     else
-      render new
+      binding.pry
+      redirect_to root_path, failure: "Event could not save"
     end
   end
 
@@ -21,6 +22,7 @@ class EventsController < ApplicationController
 
   def calendar
     @events = Event.get_events
+    @time_hash = Event.time_hash
   end
 
   def index
@@ -33,6 +35,16 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.create(event_params)
+  end
+
+  def destroy
+    event = Event.find(params[:id])
+
+    if event.destroy
+      redirect_to root_path, success: "Event destroyed"
+    else
+      render index
+    end
   end
 
   protected
