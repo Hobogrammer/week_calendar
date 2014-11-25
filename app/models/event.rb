@@ -10,4 +10,11 @@ class Event < ActiveRecord::Base
       end
     end
   end
+
+  def self.time_hash
+    time_range = (0..24)
+    time_hash = Hash.new
+    time_range.step(0.5) { |x| time_hash[x]  = 0 }
+    time_hash
+  end
 end
