@@ -5,7 +5,14 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.build(event_params)
+    @event = Event.create(event_params)
+    @event.day = @event.day.downcase
+
+    if @event.save
+      redirect_to root_path, success: "Event created successfully"
+    else
+      render new
+    end
   end
 
   def show
@@ -25,7 +32,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.build(event_params)
+    @event = Event.create(event_params)
   end
 
   protected

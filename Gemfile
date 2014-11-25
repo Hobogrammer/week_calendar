@@ -33,6 +33,7 @@ gem "twitter-bootstrap-rails"
 group :development do
   gem 'spring'
   gem 'better_errors'
+  gem 'pry-byebug'
 end
 
 group :test do  
